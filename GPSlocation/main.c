@@ -28,8 +28,8 @@ int main()
     FILE *fr;
     fp = fopen("//Users//a20161104570//Desktop//GPSlocation//GPS170510.log","r");
     fr = fopen("//Users//a20161104570//Desktop//GPSlocation//a.csv","w");
-    printf("日期,时间,经度方向,经度,纬度放向,纬度,海拔,速率,航向,卫星数量\n");
-    fprintf(fr,"日期,时间,经度方向,经度,纬度放向,纬度,海拔,速率,航向,卫星数量\n");
+    printf("日期,时间,经度方向,经度,纬度方向,纬度,海拔,速率,航向,卫星数量\n");
+    fprintf(fr,"日期,时间,经度方向,经度,纬度方向,纬度,海拔,速率,航向,卫星数量\n");
     if (fp == NULL)
     {
         printf("File open error !\n");
@@ -104,7 +104,7 @@ int main()
             }
             if(month==2)
             {
-                if(year%4==0&&year%100!=0||year%400==0)
+                if((year%4==0&&year%100!=0)||year%400==0)
                 {
                     if(day>29)
                     {
@@ -134,7 +134,7 @@ int main()
             //卫星数量
             for(i=0;i<2;i++)
                 sat[i]=c2[i+39];
-            sat[3]='\0';
+            
             //航向
             for(i=0;i<5;i++)
                 course[i]=c1[i+45];
